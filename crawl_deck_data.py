@@ -7,8 +7,18 @@ CACHE_FILENAME = "decksMeta.json"
 BASE_URL = 'https://www.hearthstonetopdecks.com/hearthstones-best-standard-ladder-decks/'
 
 def main():
-    cards = openCache(CACHE_FILENAME)
-    if len(cards) == 0:
+    ''' crawl top decks data from the website
+
+    Parameters
+    ----------
+    None
+
+    Returns
+    -------
+    None
+    '''
+    decks = openCache(CACHE_FILENAME)
+    if len(decks) == 0:
         response = requests.get(BASE_URL)
         soup = BeautifulSoup(response.text, 'html.parser')
         container = soup.find('div', class_='entry-content')
@@ -27,6 +37,18 @@ def main():
 
 
 def getDecks(url):
+    ''' crawl top decks data from the website
+
+    Parameters
+    ----------
+    url: string
+        the URL of the latest list of a type of decks
+
+    Returns
+    -------
+    array
+        a list of decks' meta information and code
+    '''
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     decksParent = soup.find('table')
@@ -44,6 +66,18 @@ def getDecks(url):
     return decks
 
 def getDeck(url):
+    ''' crawl deck data from the website
+
+    Parameters
+    ----------
+    url: string
+        the URL of the detail information of a deck
+
+    Returns
+    -------
+    dictionary
+        information of a deck
+    '''
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
     entryHeader = soup.find('header', class_='entry-header')
