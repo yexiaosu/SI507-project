@@ -1,6 +1,4 @@
-import sys
 import requests
-import json
 import logging
 from cache import saveCache, openCache
 from oauthToken import getNewToken

@@ -1,5 +1,6 @@
 import sys
 import requests
+import json
 
 def getNewToken():
     ''' get a new OAuth 2.0 token from the authentication server
