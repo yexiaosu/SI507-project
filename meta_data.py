@@ -46,22 +46,18 @@ def request(apiUrl):
         token = getNewToken()
     else:
         responseJson = apiResponse.json()
-        meta["sets"] = [{
-            element["id"]: element["name"],
-        } for element in responseJson["sets"]]
-        meta["types"] = [{
-            element["id"]: element["name"],
-        } for element in responseJson["types"]]
-        meta["rarity"] = [{
-            element["id"]: element["name"],
-        } for element in responseJson["rarities"]]
-        meta["class"] = [{
-            element["id"]: element["name"],
-        } for element in responseJson["classes"]]
-        meta["keywords"] = [{
-            element["id"]: element["name"],
-        } for element in responseJson["keywords"]]
+        meta["sets"] = appendData("sets", responseJson)
+        meta["types"] = appendData("types", responseJson)
+        meta["rarity"] = appendData("rarities", responseJson)
+        meta["class"] = appendData("classes", responseJson)
+        meta["keywords"] = appendData("keywords", responseJson)
     return meta
+
+def appendData(key, rawData):
+    data = {}
+    for element in rawData[key]:
+        data[element["id"]] = element["name"]
+    return data
 
 if __name__ == '__main__':
     main()
