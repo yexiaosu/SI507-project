@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from cache import saveCache, openCache
 
-CACHE_FILENAME = "decksMeta.json"
+CACHE_FILENAME = "./raw_data/decksMeta.json"
 
 BASE_URL = 'https://www.hearthstonetopdecks.com/hearthstones-best-standard-ladder-decks/'
 

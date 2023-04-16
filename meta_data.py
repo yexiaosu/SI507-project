@@ -1,9 +1,9 @@
 import requests
 import logging
 from cache import saveCache, openCache
-from oauthToken import getNewToken
+from oauth_token import getNewToken
 
-CACHE_FILENAME = "metaInfo.json"
+CACHE_FILENAME = "./raw_data/metaInfo.json"
 
 def main():
     ''' get and save meta data

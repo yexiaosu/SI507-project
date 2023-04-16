@@ -2,10 +2,10 @@ import requests
 import logging
 import urllib.parse
 from cache import saveCache, openCache
-from oauthToken import getNewToken
+from oauth_token import getNewToken
 
-CACHE_FILENAME = "decks.json"
-DECK_META_FILE = "decksMeta.json"
+CACHE_FILENAME = "./raw_data/decks.json"
+DECK_META_FILE = "./raw_data/decksMeta.json"
 
 
 def main():
