@@ -2,6 +2,13 @@ import sys
 import requests
 import json
 
+def readClient():
+    file = open('client.txt', 'r')
+    id = file.readline()
+    secret = file.readline()
+    file.close()
+    return id, secret
+
 def getNewToken():
     ''' get a new OAuth 2.0 token from the authentication server
 
@@ -15,8 +22,7 @@ def getNewToken():
         the token
     '''
     authServerUrl = "https://oauth.battle.net/token"
-    clientId = '2d49b07cd937443ca11518271989ed4d'
-    clientSecret = 'cLeBHmV1yQPK9i6g8g13Iq5fxq6drTIT'
+    clientId, clientSecret = readClient()
 
     tokenReqPayload = {'grant_type': 'client_credentials'}
 
