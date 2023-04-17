@@ -1,0 +1,14 @@
+:root {
+    --main-bg-color: #351a14;
+    --secondary-bg-color: #F78C15;
+    --main-text-color: #f9f9f9;
+    --secondary-text-color: #FFC31F;
+    --decorate-color: #26AEE7;
+    --border-radius: 6px
+}
+
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
