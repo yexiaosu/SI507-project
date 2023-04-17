@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block head %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/index.css') }}"
+/>
+<script
+    type="module"
+    src="{{ url_for('static', filename='js/card.js') }}"
+></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Top Decks <span>&</span> Popular Cards</h1>
+    <div class="button-effect">
+        <a class="effect" href="#" title="Find Top Decks"
+            >Find Top Decks</a
+        >
+        <a class="effect" href="#" title="Explore Popular Cards"
+            >Explore Popular Cards</a
+        >
+    </div>
+</div>
+{% endblock %}
