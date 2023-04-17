@@ -18,7 +18,6 @@ def find_decks():
 def show_decks(formats, classes):
     with open('data/decks_tree.json') as json_file:
         decks = json.load(json_file)
-    print(decks)
     selected_decks = []
     if formats == "all":
         for format in decks:
