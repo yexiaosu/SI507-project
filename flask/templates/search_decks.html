@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link
+rel="stylesheet"
+href="{{ url_for('static', filename='css/deck.css') }}"
+/>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script
+    type="module"
+    src="{{ url_for('static', filename='js/deck.js') }}"
+></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div
+            class="col-11 col-sm-10 col-md-10 col-lg-6 col-xl-5 text-center p-0 mt-3 mb-2"
+        >
+            <div class="card pack px-0 pt-4 pb-0 mt-3 mb-3">
+                <h1>Find a top deck</h1>
+                <p>Make a choice and click "Next". Leaving all choices blank means selecting all.</p>
+                <form id="msform">
+                    <!-- progressbar -->
+                    <div class="progress">
+                        <div
+                            class="progress-bar progress-bar-striped progress-bar-animated"
+                            role="progressbar"
+                            aria-valuemin="0"
+                            aria-valuemax="100"
+                        ></div>
+                    </div>
+                    <br />
+                    <!-- fieldsets -->
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2>Choose Format:</h2>
+                                </div>
+                            </div>
+                            {% for format in formats %}
+                            <div class="inputGroup">
+                                <input
+                                type="radio"
+                                id={{ 'format%d' % loop.index }}
+                                name="format"
+                                value={{ format }}
+                                />
+                                <label class="fieldlabels" for={{ 'format%d' % loop.index }}>{{ format }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input
+                            type="button"
+                            name="next"
+                            class="next action-button"
+                            value="Next"
+                        />
+                    </fieldset>
+                    <fieldset>
+                        <div class="form-card">
+                            <div class="row">
+                                <div class="col-7">
+                                    <h2>Choose Class:</h2>
+                                </div>
+                            </div>
+                            {% for class in classes %}
+                            <div class="inputGroup">
+                                <input
+                                type="radio"
+                                id={{ 'class%d' % loop.index }}
+                                name="class"
+                                value={{ class }}
+                                />
+                                <label class="fieldlabels" for={{ 'class%d' % loop.index }}>{{ class }}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <input
+                            type="button"
+                            name="next"
+                            class="next action-button"
+                            value="Search"
+                            onclick="location.href=`/decks/${window.format}/${window.class}`;"
+                        />
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

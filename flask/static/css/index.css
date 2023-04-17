@@ -24,7 +24,7 @@
 
 .container .button-effect a {
     margin-right: 17px;
-    background-color: var(--secondary-bg-color);
+    background-color: var(--highlight-bg-color);
 }
 
 .container .button-effect a:last-child {

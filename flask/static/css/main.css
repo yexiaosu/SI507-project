@@ -1,12 +1,23 @@
 :root {
     --main-bg-color: #351a14;
-    --secondary-bg-color: #F78C15;
+    --secondary-bg-color: #edd7a9;
+    --highlight-bg-color: #f78715;
     --main-text-color: #f9f9f9;
-    --secondary-text-color: #FFC31F;
+    --secondary-text-color: #030303;
+    --highlight-text-color: #f78715;
+    --weak-text-color: grey;
     --decorate-color: #26AEE7;
     --border-radius: 6px
 }
 
+* {
+    margin: 0;
+    padding: 0
+}
+
+html {
+    height: 100%
+}
 
 body {
     background-color: var(--main-bg-color);

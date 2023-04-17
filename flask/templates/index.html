@@ -6,10 +6,6 @@
     rel="stylesheet"
     href="{{ url_for('static', filename='css/index.css') }}"
 />
-<script
-    type="module"
-    src="{{ url_for('static', filename='js/card.js') }}"
-></script>
 {% endblock %}
 
 {% block body %}
@@ -17,7 +13,7 @@
     <img src="{{ url_for('static', filename='image/Hearthstone_Logo.png') }}">
     <h1>Top Decks <span>&</span> Popular Cards</h1>
     <div class="button-effect">
-        <a class="effect" href="#" title="Find Top Decks"
+        <a class="effect" href="/decks" title="Find Top Decks"
             >Find Top Decks</a
         >
         <a class="effect" href="#" title="Explore Popular Cards"
