@@ -8,14 +8,18 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/decks')
+def decks():
+    return render_template('index.html')
+
 @app.route('/cards_data')
-def get_data():
+def get_cards_data():
     with open('data/cards_tree.json') as json_file:
         cards = json.load(json_file)
     return jsonify(cards)
 
 @app.route('/decks_data')
-def get_data():
+def get_decks_data():
     with open('data/decks_tree.json') as json_file:
         decks = json.load(json_file)
     return jsonify(decks)
