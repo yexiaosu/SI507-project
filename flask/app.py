@@ -1,3 +1,8 @@
+### references:
+### https://flask.palletsprojects.com/en/2.2.x/quickstart/#
+### https://codepen.io/monbrielle/pen/dyYRgPm
+### https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
 from flask import Flask, render_template, url_for, jsonify
 import json
 from operator import itemgetter
@@ -20,6 +25,8 @@ def show_decks(formats, classes):
     with open('data/decks_tree.json') as json_file:
         decks = json.load(json_file)
     selected_decks = []
+    classes = "Demon Hunter" if classes == "DemonHunter" else classes
+    classes = "Death Knight" if classes == "DeathKnight" else classes
     if formats == "all":
         for format in decks:
             if classes == "all":
@@ -40,6 +47,8 @@ def deck_detail(formats, classes, deck_id):
     with open('data/decks_tree.json') as json_file:
         decks = json.load(json_file)
     selected_deck = None
+    classes = "Demon Hunter" if classes == "DemonHunter" else classes
+    classes = "Death Knight" if classes == "DeathKnight" else classes
     for format in decks:
         if format != formats:
             continue
@@ -95,17 +104,6 @@ def show_cards(classes, types, rarities):
     selected_cards_sorted = sorted(selected_cards, key=itemgetter('popular'), reverse=True)
     return render_template('cards.html', cards=selected_cards_sorted, class_name = classes, type = types, rarity = rarities)
 
-@app.route('/cards_data')
-def get_cards_data():
-    with open('data/cards_tree.json') as json_file:
-        cards = json.load(json_file)
-    return jsonify(cards)
-
-@app.route('/decks_data')
-def get_decks_data():
-    with open('data/decks_tree.json') as json_file:
-        decks = json.load(json_file)
-    return jsonify(decks)
 
 
 if __name__ == '__main__':

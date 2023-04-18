@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    let current_fs, next_fs, previous_fs; //fieldsets
+    let current_fs, next_fs; 
     let opacity;
     let current = 1;
     let steps = $("fieldset").length;

@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    let current_fs, next_fs, previous_fs; //fieldsets
-    let opacity;
+    let current_fs, next_fs; 
     let current = 1;
     let steps = $("fieldset").length;
     window.type = "all";
@@ -36,7 +35,6 @@ $(document).ready(function () {
                 step: function (now) {
                     // for making fielset appear animation
                     opacity = 1 - now;
-
                     current_fs.css({
                         display: "none",
                         position: "relative",
