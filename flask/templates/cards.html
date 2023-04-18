@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/card.css') }}"
+/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card-container">
+            <h1>Popular cards of <span>{{class_name}}</span> class, <span>{{type}}</span> type and <span>{{rarity}}</span> rarity</h1>
+            <p>The cards are ordered from most popular to least popular.</p>
+            <p>If a card is used in a top deck, it's more popular than others.</p>
+            <ul class="cards">
+                {% for card in cards %}
+                <li class="cards_item">
+                    <div class="card">
+                        <div class="card_image" onclick={{ "location.href='/cards/%d';" % card.id }}><img src={{ card.image }}></div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
