@@ -32,7 +32,7 @@ def show_decks(formats, classes):
                 selected_decks.extend(decks[formats][class_name])
         else:
             selected_decks.extend(decks[formats][classes])
-    return render_template('decks.html', decks=selected_decks)
+    return render_template('decks.html', decks=selected_decks, format=formats, class_name=classes)
 
 @app.route('/cards_data')
 def get_cards_data():
@@ -48,4 +48,4 @@ def get_decks_data():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=8000, debug=True)

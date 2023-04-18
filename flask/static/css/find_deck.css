@@ -3,7 +3,6 @@ p {
 }
 
 h1 {
-    text-transform: uppercase;
     color: var(--highlight-text-color);
     font-weight: normal
 }

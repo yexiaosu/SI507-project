@@ -1,7 +1,55 @@
-.container {
-    color: var(--main-text-color)
+h1 {
+    color: var(--highlight-text-color);
+    font-weight: normal
+}
+
+h1 span {
+    font-style: italic;
+    color: var(--decorate-color);
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative;
+    background-color: var(--secondary-bg-color);
+    padding: 24px 15px !important;
+    margin: 24px 15px !important;
 }
 
 .table {
-    color: var(--main-text-color)
+    color: var(--secondary-text-color);
+    border-radius: var(--border-radius);
+}
+
+table.table-bordered,
+table.table-bordered>thead>tr>th,
+table.table-bordered>tbody>tr>td {
+    border: 1px solid var(--weak-text-color);
+}
+
+.search-input {
+    background-color: var(--weak-bg-color);
+}
+
+.form-select {
+    background-color: var(--weak-bg-color);
+}
+
+.action-button {
+    width: 100px;
+    background-color: var(--highlight-bg-color);
+    font-weight: bold;
+    color: var(--main-text-color);
+    border: 0 none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    float: right
+}
+
+.action-button:hover,
+.action-button:focus {
+    background-color: var(--decorate-color);
 }

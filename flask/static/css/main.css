@@ -6,8 +6,9 @@
     --secondary-text-color: #030303;
     --highlight-text-color: #f78715;
     --weak-text-color: grey;
+    --weak-bg-color: #eeeeee;
     --decorate-color: #26AEE7;
-    --border-radius: 6px
+    --border-radius: 6px;
 }
 
 * {
@@ -22,4 +23,9 @@ html {
 body {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
+}
+
+h1, h2, h3 {
+    font-family: 'Droid Serif', serif;
+    font-weight: 800;
 }
