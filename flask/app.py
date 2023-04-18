@@ -51,6 +51,13 @@ def deck_detail(formats, classes, deck_id):
                 
     return render_template('deck_detail.html', deck=selected_deck)
 
+@app.route('/cards')
+def find_cards():
+    classes = ["Warrior", "Warlock", "Shaman", "Rogue", "Priest", "Paladin", "Mage", "Hunter", "Druid", "Demon Hunter", "Death Knight", "Neutral"]
+    types = ["Hero", "Minion", "Spell", "Weapon", "HeroPower", "Location", "Reward"]
+    rarities = ["Common", "Free", "Rare", "Epic", "Legendary"]
+    return render_template('search_cards.html', classes = classes, types = types, rarities = rarities)
+
 @app.route('/cards_data')
 def get_cards_data():
     with open('data/cards_tree.json') as json_file:
