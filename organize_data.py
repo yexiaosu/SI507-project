@@ -81,6 +81,19 @@ def organizeDecks(decks):
             "Demon Hunter": [],
             "Death Knight": []
         },
+        "wolf": {
+            "Warrior": [],
+            "Warlock": [],
+            "Shaman": [],
+            "Rogue": [],
+            "Priest": [],
+            "Paladin": [],
+            "Mage": [],
+            "Hunter": [],
+            "Druid": [],
+            "Demon Hunter": [],
+            "Death Knight": []
+        },
         "classic": {
             "Warrior": [],
             "Warlock": [],
