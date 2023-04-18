@@ -114,6 +114,8 @@ def organizeDecks(decks):
             continue
         decks_tree[deck["format"]][deck["class"]].append({
             "id": id,
+            "format": deck["format"],
+            "class": deck["class"],
             "type": deck["type"],
             "season": deck["season"],
             "style": deck["style"],
