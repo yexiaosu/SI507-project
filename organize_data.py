@@ -784,6 +784,8 @@ def organizeCards(cards, decks):
             "manaCost": card["manaCost"],
             "name": card["name"],
             "text": card["text"],
+            "flavorText": card["flavorText"],
+            "artistName": card["artistName"],
             "image": card["image"],
             "cropImage": card["cropImage"],
             "keywords": [idToKeyword[str(id)] for id in card["keywordIds"] if str(id) in idToKeyword] if "keywordIds" in card else [],
