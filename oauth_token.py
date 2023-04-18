@@ -4,8 +4,8 @@ import json
 
 def readClient():
     file = open('client.txt', 'r')
-    id = file.readline()
-    secret = file.readline()
+    id = file.readline().strip()
+    secret = file.readline().strip()
     file.close()
     return id, secret
 
