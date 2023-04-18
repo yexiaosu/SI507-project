@@ -1,9 +1,3 @@
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
 h1, h2 {
     color: var(--highlight-text-color);
 }
@@ -70,4 +64,33 @@ img {
 
 .card:hover {
     transform: scale(1.1);
+}
+
+.action-button {
+    width: 100px;
+    background-color: var(--highlight-bg-color);
+    font-weight: bold;
+    color: var(--main-text-color);
+    border: 0 none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    float: right
+}
+
+.action-button:hover,
+.action-button:focus {
+    background-color: var(--decorate-color);
+}
+
+.back {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+}
+
+.back-container {
+    margin-top: 20px;
 }

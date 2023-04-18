@@ -9,6 +9,10 @@
 
 {% block body %}
 <div class="container">
+    <div class="row back-container">
+        <input type="button" name="back" class="back action-button" value="Back to Home" onclick="location.href=`/`;"/>
+        <input type="button" name="back" class="back action-button" value="Back to Search" onclick="location.href=`/decks`;"/>
+    </div>
     <div class="row justify-content-center">
         <div class="card">
             <h1>Top decks of <span>{{format}}</span> format and <span>{{class_name}}</span> class</h1>

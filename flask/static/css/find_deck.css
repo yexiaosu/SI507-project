@@ -39,7 +39,7 @@ h1 {
     display: none
 }
 
-#msform .action-button {
+.action-button {
     width: 100px;
     background-color: var(--highlight-bg-color);
     font-weight: bold;
@@ -52,8 +52,8 @@ h1 {
     float: right
 }
 
-#msform .action-button:hover,
-#msform .action-button:focus {
+.action-button:hover,
+.action-button:focus {
     background-color: var(--decorate-color);
 }
 
@@ -154,4 +154,15 @@ h2 {
 .fit-image {
     width: 100%;
     object-fit: cover
+}
+
+.back {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+}
+
+.back-container {
+    margin-top: 20px;
 }

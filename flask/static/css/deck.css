@@ -52,3 +52,14 @@ table.table-bordered>tbody>tr>td {
 .action-button:focus {
     background-color: var(--decorate-color);
 }
+
+.back {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+}
+
+.back-container {
+    margin-top: 20px;
+}

@@ -58,18 +58,6 @@ img {
     mix-blend-mode: multiply;
 }
 
-@media (min-width: 800px) {
-    .cards-item {
-        width: 33.33%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .cards-item {
-        width: 20%;
-    }
-}
-
 .card-outer {
     display: flex;
     flex-direction: row;
@@ -88,4 +76,33 @@ img {
 
 .card:hover {
     transform: scale(1.1);
+}
+
+.action-button {
+    width: 100px;
+    background-color: var(--highlight-bg-color);
+    font-weight: bold;
+    color: var(--main-text-color);
+    border: 0 none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    padding: 5px;
+    margin: 5px;
+    float: right
+}
+
+.action-button:hover,
+.action-button:focus {
+    background-color: var(--decorate-color);
+}
+
+.back {
+    width: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 50px;
+}
+
+.back-container {
+    margin-top: 20px;
 }

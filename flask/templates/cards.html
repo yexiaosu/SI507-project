@@ -9,6 +9,10 @@
 
 {% block body %}
 <div class="container">
+    <div class="row back-container">
+        <input type="button" name="back" class="back action-button" value="Back to Home" onclick="location.href=`/`;"/>
+        <input type="button" name="back" class="back action-button" value="Back to Search" onclick="location.href=`/cards`;"/>
+    </div>
     <div class="row justify-content-center">
         <div class="card-container">
             <h1>Popular cards of <span>{{class_name}}</span> class, <span>{{type}}</span> type and <span>{{rarity}}</span> rarity</h1>
