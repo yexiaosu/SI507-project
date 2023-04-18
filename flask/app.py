@@ -34,6 +34,23 @@ def show_decks(formats, classes):
             selected_decks.extend(decks[formats][classes])
     return render_template('decks.html', decks=selected_decks, format=formats, class_name=classes)
 
+@app.route('/deck/<formats>/<classes>/<deck_id>')
+def deck_detail(formats, classes, deck_id):
+    with open('data/decks_tree.json') as json_file:
+        decks = json.load(json_file)
+    selected_deck = None
+    for format in decks:
+        if format != formats:
+            continue
+        for class_name in decks[format]:
+            if class_name != classes:
+                continue
+            for deck in decks[format][classes]:
+                if deck["id"] == int(deck_id):
+                    selected_deck = deck
+                
+    return render_template('deck_detail.html', deck=selected_deck)
+
 @app.route('/cards_data')
 def get_cards_data():
     with open('data/cards_tree.json') as json_file:

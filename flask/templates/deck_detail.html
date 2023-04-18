@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/deck_detail.css') }}"
+/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card-container">
+            <h1>{{ deck.metaDeck }}</h1>
+            <p>format: {{ deck.format }}, class: {{ deck.class }}, type: {{ deck.type }}, season: {{ deck.season }}, style: {{ deck.style }}</p>
+            <p>hero: {{ deck.hero.name }}</p>
+            <p>hero power: {{ deck.heroPower.name }} - {{ deck.heroPower.text|safe }}</p>
+            <div class="cards">
+                {% for card in deck.cards %}
+                <div class="card shadow-1">
+                    <div class="manaCost"><h2>{{ card.manaCost }}</h2></div>
+                    <div class="card-img">
+                        <img src={{ card.cropImage }} alt={{ card.name }}>
+                        <div class="overlay"><h2>{{ card.name }}</h2></div>
+                    </div>
+                    {% if card.rarity == "Common" or card.rarity == "Free" %}
+                    <div class="rarity common"></div>
+                    {% elif card.rarity == "Rare" %}
+                    <div class="rarity rare"></div>
+                    {% elif card.rarity == "Epic" %}
+                    <div class="rarity epic"></div>
+                    {% else %}
+                    <div class="rarity legendary"></div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+></script>
+<script src="https://unpkg.com/bootstrap-table@1.21.4/dist/bootstrap-table.min.js"></script>
+<script src="https://unpkg.com/bootstrap-table@1.21.4/dist/extensions/filter-control/bootstrap-table-filter-control.min.js"></script>
+{% endblock %}
