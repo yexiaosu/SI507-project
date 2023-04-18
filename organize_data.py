@@ -109,6 +109,8 @@ def organizeDecks(decks):
         }
     }
     for deck in decks:
+        if not deck["season"].startswith('season'):
+            continue
         decks_tree[deck["format"]][deck["class"]].append({
             "type": deck["type"],
             "season": deck["season"],

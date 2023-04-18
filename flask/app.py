@@ -10,7 +10,7 @@ def index():
 
 @app.route('/decks')
 def find_decks():
-    formats = ["wild", "hydra", "mammoth", "classic"]
+    formats = ["wild", "wolf", "hydra", "mammoth", "classic"]
     classes = ["Warrior", "Warlock", "Shaman", "Rogue", "Priest", "Paladin", "Mage", "Hunter", "Druid", "Demon Hunter", "Death Knight"]
     return render_template('search_decks.html', formats = formats, classes = classes)
 
