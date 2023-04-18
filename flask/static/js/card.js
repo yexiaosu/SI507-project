@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    let current_fs, next_fs; 
+    let current_fs, next_fs;
+    let opacity;
     let current = 1;
     let steps = $("fieldset").length;
     window.type = "all";

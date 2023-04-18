@@ -46,7 +46,7 @@ href="{{ url_for('static', filename='css/find_deck.css') }}"
                                 type="radio"
                                 id={{ 'class%d' % loop.index }}
                                 name="class"
-                                value={{ class }}
+                                value={{ class.replace(" ", "") }}
                                 />
                                 <label class="fieldlabels" for={{ 'class%d' % loop.index }}>{{ class }}</label>
                             </div>
@@ -72,7 +72,7 @@ href="{{ url_for('static', filename='css/find_deck.css') }}"
                                 type="radio"
                                 id={{ 'type%d' % loop.index }}
                                 name="type"
-                                value={{ class }}
+                                value={{ type }}
                                 />
                                 <label class="fieldlabels" for={{ 'type%d' % loop.index }}>{{ type }}</label>
                             </div>

@@ -8,6 +8,10 @@ h1, h2 {
     color: var(--highlight-text-color);
 }
 
+h1 {
+    margin-bottom: 20px;
+}
+
 h1 span {
     font-style: italic;
     color: var(--decorate-color);
@@ -15,6 +19,26 @@ h1 span {
 
 p {
     color: var(--weak-text-color)
+}
+
+div {
+    color: var(--secondary-text-color)
+}
+
+div span {
+    font-style: italic;
+    color: var(--decorate-color);
+}
+
+ul {
+    color: var(--highlight-text-color);
+    font-weight: 500;
+}
+
+ul span {
+    font-style: normal;
+    color: var(--secondary-text-color);
+    font-weight: 300;
 }
 
 .card-container {
@@ -29,22 +53,9 @@ p {
 
 img {
     height: auto;
-    max-width: 190px;
+    max-width: 290px;
     vertical-align: middle;
     mix-blend-mode: multiply;
-}
-
-.cards {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.cards-item {
-    display: flex;
-    padding: 1rem;
 }
 
 @media (min-width: 800px) {
@@ -59,9 +70,16 @@ img {
     }
 }
 
+.card-outer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
 .card {
     border-radius: 0.25rem;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    min-width: 290px;
     display: flex;
     flex-direction: column;
     overflow: hidden;

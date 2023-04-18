@@ -4,7 +4,6 @@ p {
 
 h1 {
     color: var(--highlight-text-color);
-    font-weight: normal
 }
 
 .card {

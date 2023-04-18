@@ -15,10 +15,13 @@
             <p>The cards are ordered from most popular to least popular.</p>
             <p>If a card is used in a top deck, it's more popular than others.</p>
             <ul class="cards">
+                {% if cards|length == 0 %}
+                    <h2>There is no cards under this category.</h2>
+                {% endif %}
                 {% for card in cards %}
-                <li class="cards_item">
+                <li class="cards-item">
                     <div class="card">
-                        <div class="card_image" onclick={{ "location.href='/cards/%d';" % card.id }}><img src={{ card.image }}></div>
+                        <div class="card-image" onclick={{ "location.href='/cards/"+(card.class.replace(" ", ""))+"/"+card.cardType+"/"+card.rarity+"/%d';" % card.id }}><img src={{ card.image }}></div>
                     </div>
                 </li>
                 {% endfor %}

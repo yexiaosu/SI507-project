@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='css/card_detail.css') }}"
+/>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="card-container">
+            <h1>{{ card.name }}</h1>
+            <div class="card-outer">
+                <div class="card">
+                    <div class="card-image"><img src={{ card.image }}></div>
+                </div>
+                <div class="card-info">
+                    <p>{{ card.flavorText|safe }}</p>
+                    <div>{{ card.text|safe }}</div>
+                    <ul>
+                        <li>Class: <span>{{ card.class }}</span></li>
+                        <li>Type: <span>{{ card.cardType }}</span></li>
+                        <li>Set: <span>{{ card.cardSet }}</span></li>
+                        <li>Rarity: <span>{{ card.rarity }}</span></li>
+                        <li>Artist: <span>{{ card.artistName }}</span></li>
+                    </ul>
+                    <div>This card appears in top decks <span>{{ card.popular }}</span> times.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
