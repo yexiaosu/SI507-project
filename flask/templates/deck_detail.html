@@ -22,7 +22,7 @@
             <p>hero power: {{ deck.heroPower.name }} - {{ deck.heroPower.text|safe }}</p>
             <div class="cards">
                 {% for card in deck.cards %}
-                <div class="card shadow-1">
+                <div class="card shadow-1" onclick={{ "location.href='/cards/"+(card.class.replace(" ", ""))+"/"+card.cardType+"/"+card.rarity+"/%d';" % card.id }}>
                     <div class="manaCost"><h2>{{ card.manaCost }}</h2></div>
                     <div class="card-img">
                         <img src={{ card.cropImage }} alt={{ card.name }}>

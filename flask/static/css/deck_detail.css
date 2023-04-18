@@ -60,6 +60,11 @@ p {
     overflow: hidden;
     display: grid;
     grid-template-columns: 40px 300px 10px;
+    transition: transform 0.2s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
 }
 
 .card h2 {
