@@ -108,10 +108,12 @@ def organizeDecks(decks):
             "Death Knight": []
         }
     }
+    id = 0
     for deck in decks:
         if not deck["season"].startswith('season'):
             continue
         decks_tree[deck["format"]][deck["class"]].append({
+            "id": id,
             "type": deck["type"],
             "season": deck["season"],
             "style": deck["style"],
@@ -139,6 +141,7 @@ def organizeDecks(decks):
                 "keywords": [idToKeyword[str(id)] for id in card["keywordIds"] if str(id) in idToKeyword] if "keywordIds" in card else []
             } for card in deck["cards"]]
         })
+        id = id + 1
     return decks_tree
 
 def organizeCards(cards, decks):
