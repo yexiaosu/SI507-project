@@ -83,14 +83,14 @@ def getDeck(url):
     entryHeader = soup.find('header', class_='entry-header')
     deckMetaContainer = entryHeader.find('div', class_='deck-meta')
     deckMetaLinks = deckMetaContainer.find_all('a', recursive=True)
-    deckMetaAll = [meta.decode_contents() for meta in deckMetaLinks if meta.decode_contents() != ""]
+    deckMetaAll = [meta.decode_contents() for meta in deckMetaLinks]
     deck = {
         "class": deckMetaAll[0] if len(deckMetaAll) > 0 else "",
-        "format": deckMetaAll[1] if len(deckMetaAll) > 1 else "",
-        "type": deckMetaAll[2] if len(deckMetaAll) > 2 else "",
-        "season": deckMetaAll[3] if len(deckMetaAll) > 3 else "",
-        "style": deckMetaAll[4] if len(deckMetaAll) > 4 else "",
-        "metaDeck": deckMetaAll[5] if len(deckMetaAll) > 5 else "",
+        "format": deckMetaAll[2] if len(deckMetaAll) > 2 else "",
+        "type": deckMetaAll[3] if len(deckMetaAll) > 3 else "",
+        "season": deckMetaAll[4] if len(deckMetaAll) > 4 else "",
+        "style": deckMetaAll[5] if len(deckMetaAll) > 5 else "",
+        "metaDeck": deckMetaAll[6] if len(deckMetaAll) > 6 else "",
     }
     deckCodeContainer = soup.find('button', class_='btn btn-dark btn-dark-tiny-wide')
     deckCode = deckCodeContainer.attrs["data-deck-code"]
