@@ -6,6 +6,7 @@
 from flask import Flask, render_template, url_for, jsonify
 import json
 from operator import itemgetter
+from read_data import load_decks_tree, load_cards_tree
 
 app = Flask(__name__)
 
@@ -22,8 +23,7 @@ def find_decks():
 
 @app.route('/decks/<formats>/<classes>')
 def show_decks(formats, classes):
-    with open('data/decks_tree.json') as json_file:
-        decks = json.load(json_file)
+    decks = load_decks_tree()
     selected_decks = []
     classes = "Demon Hunter" if classes == "DemonHunter" else classes
     classes = "Death Knight" if classes == "DeathKnight" else classes
@@ -44,8 +44,7 @@ def show_decks(formats, classes):
 
 @app.route('/decks/<formats>/<classes>/<deck_id>')
 def deck_detail(formats, classes, deck_id):
-    with open('data/decks_tree.json') as json_file:
-        decks = json.load(json_file)
+    decks = load_decks_tree()
     selected_deck = None
     classes = "Demon Hunter" if classes == "DemonHunter" else classes
     classes = "Death Knight" if classes == "DeathKnight" else classes
@@ -69,8 +68,7 @@ def find_cards():
 
 @app.route('/cards/<classes>/<types>/<rarities>')
 def show_cards(classes, types, rarities):
-    with open('data/cards_tree.json') as json_file:
-        cards = json.load(json_file)
+    cards = load_cards_tree()
     selected_cards = []
     classes = "Demon Hunter" if classes == "DemonHunter" else classes
     classes = "Death Knight" if classes == "DeathKnight" else classes
@@ -108,8 +106,7 @@ def show_cards(classes, types, rarities):
 
 @app.route('/cards/<classes>/<types>/<rarities>/<card_id>')
 def card_detail(classes, types, rarities, card_id):
-    with open('data/cards_tree.json') as json_file:
-        cards = json.load(json_file)
+    cards = load_cards_tree()
     selected_card = None
     classes = "Demon Hunter" if classes == "DemonHunter" else classes
     classes = "Death Knight" if classes == "DeathKnight" else classes
@@ -128,4 +125,4 @@ def card_detail(classes, types, rarities, card_id):
     return render_template('card_detail.html', card=selected_card)
 
 if __name__ == '__main__':
-    app.run(port=8000, debug=True)
+    app.run()
