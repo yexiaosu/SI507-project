@@ -1,11 +1,11 @@
 from cache import saveCache, openCache
 
-CARDS_FILENAME = "./raw_data/cards.json"
-DECKS_FILENAME = "./raw_data/decks.json"
-META_FILENAME = "./raw_data/metaInfo.json"
+CARDS_FILENAME = "retrieve_data/raw_data/cards.json"
+DECKS_FILENAME = "retrieve_data/raw_data/decks.json"
+META_FILENAME = "retrieve_data/raw_data/metaInfo.json"
 
-CARDSTREE_FILENAME = "./data/cards_tree.json"
-DECKSTREE_FILENAME = "./data/decks_tree.json"
+CARDSTREE_FILENAME = "retrieve_data/data/cards_tree.json"
+DECKSTREE_FILENAME = "retrieve_data/data/decks_tree.json"
 
 idToClass = {}
 idToType = {}

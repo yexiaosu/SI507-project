@@ -4,8 +4,8 @@ import urllib.parse
 from cache import saveCache, openCache
 from oauth_token import getNewToken
 
-CACHE_FILENAME = "./raw_data/decks.json"
-DECK_META_FILE = "./raw_data/decksMeta.json"
+CACHE_FILENAME = "retrieve_data/raw_data/decks.json"
+DECK_META_FILE = "retrieve_data/raw_data/decksMeta.json"
 
 
 def main():

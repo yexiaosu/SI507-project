@@ -3,7 +3,7 @@ import logging
 from cache import saveCache, openCache
 from oauth_token import getNewToken
 
-CACHE_FILENAME = "./raw_data/cards.json"
+CACHE_FILENAME = "retrieve_data/raw_data/cards.json"
 
 def main():
     ''' get and save data of cards
